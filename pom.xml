@@ -6,6 +6,10 @@
     <artifactId>auto-version-maven-extension-test</artifactId>
     <version>0.0.1.${revision}</version>
 
+    <scm>
+      <connection>scm:git:git@git.basistech.net:benson/auto-version-test.git</connection>
+      <developerConnection>scm:git:git@git.basistech.net:benson/auto-version-test.git</developerConnection>
+    </scm>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
