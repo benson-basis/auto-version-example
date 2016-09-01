@@ -2,7 +2,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.basistech</groupId>
+    <parent>
+        <groupId>com.basistech</groupId>
+        <artifactId>textanalytics</artifactId>
+        <version>58.2.11</version>
+	<relativePath />
+    </parent>
+
     <artifactId>auto-version-maven-extension-test</artifactId>
     <version>0.0.1.${revision}</version>
 
