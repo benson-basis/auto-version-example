@@ -1,25 +1,21 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<?xml version="1.0"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
     <parent>
         <groupId>com.basistech</groupId>
         <artifactId>textanalytics</artifactId>
         <version>58.2.11</version>
-	<relativePath />
+        <relativePath/>
     </parent>
-
     <artifactId>auto-version-maven-extension-test</artifactId>
     <version>0.0.1.${revision}</version>
-
     <scm>
-      <connection>scm:git:git@git.basistech.net:benson/auto-version-test.git</connection>
-      <developerConnection>scm:git:git@git.basistech.net:benson/auto-version-test.git</developerConnection>
+        <connection>scm:git:git@git.basistech.net:benson/auto-version-test.git</connection>
+        <developerConnection>scm:git:git@git.basistech.net:benson/auto-version-test.git</developerConnection>
     </scm>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-
     <build>
         <plugins>
             <plugin>
@@ -30,6 +26,30 @@
                     <source>1.7</source>
                     <target>1.7</target>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>flatten-maven-plugin</artifactId>
+                <version>1.0.0</version>
+                <configuration>
+        </configuration>
+                <executions>
+                    <!-- enable flattening -->
+                    <execution>
+                        <id>flatten</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>flatten</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>flatten.clean</id>
+                        <phase>clean</phase>
+                        <goals>
+                            <goal>clean</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
